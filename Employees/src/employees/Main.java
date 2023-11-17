@@ -60,7 +60,7 @@ public class Main {
 
         Consumer<String> c1 = s -> s.toUpperCase();
         Consumer<String> c2 = s -> System.out.println(s);
-        c1.andThen(c2).accept("Hello, World!");
+        c1.andThen(c2).accept("helloworld.Hello, World!");
 
 //        printEmployeesByAge(employees, "Employees over 30", employee -> employee.getAge() > 30);
 //        printEmployeesByAge(employees, "\nEmployees 30 and under", employee -> employee.getAge() <= 30);

@@ -72,7 +72,7 @@ public class Locations implements Map<Integer, Location> {
         }
     }
 
-    public Location getLocation(int locationId) throws IOException {
+    public adventurerandom.Location getLocation(int locationId) throws IOException {
 
         IndexRecord record = index.get(locationId);
         ra.seek(record.getStartByte());
@@ -81,7 +81,7 @@ public class Locations implements Map<Integer, Location> {
         String exits = ra.readUTF();
         String[] exitPart = exits.split(",");
 
-        Location location = new Location(locationId, description, null);
+        adventurerandom.Location location = new adventurerandom.Location(locationId, description, null);
 
         if (locationId != 0) {
             for (int i = 0; i < exitPart.length; i++) {

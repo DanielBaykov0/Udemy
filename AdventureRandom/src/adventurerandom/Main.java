@@ -1,7 +1,5 @@
 package adventurerandom;
 
-import adventure.Location;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Locale;

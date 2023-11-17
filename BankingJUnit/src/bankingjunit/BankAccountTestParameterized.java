@@ -1,6 +1,5 @@
 package bankingjunit;
 
-import bankaccount.BankAccount;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -12,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class BankAccountTestParameterized {
 
-    private BankAccount account;
+    private bankingjunit.BankAccount account;
     private double amount;
     private boolean branch;
     private double expected;
@@ -25,7 +24,7 @@ public class BankAccountTestParameterized {
 
     @org.junit.Before
     public void setup() {
-        account = new BankAccount("Tim", "Buchalka", 1000.00, BankAccount.CHECKING);
+        account = new BankAccount("Tim", "Buchalka", 1000.00, bankingjunit.BankAccount.CHECKING);
         System.out.println("Running a test...");
     }
 
