@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -11,18 +12,34 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        String fileName = "testing.csv";
+        System.out.println("Current Working Directory (cd) = " +
+                new File("").getAbsolutePath());
 
-        testFile2(null);
+        String fileName = "Input&Output/files/testing.csv";
+
+        testFile2(fileName);
 
         File file = new File(fileName);
+        System.out.println(file.getAbsolutePath());
         if (!file.exists()) {
             System.out.println("I can't run unless this file exists");
-            System.out.println("Quitting Application, go figure it out");
             return;
         }
 
         System.out.println("I'm good to go");
+
+        for (File f : File.listRoots()) {
+            System.out.println(f);
+        }
+
+        Path path = Paths.get("Input&Output/files/testing.csv");
+        System.out.println(file.getAbsolutePath());
+        if (!Files.exists(path)) {
+            System.out.println("2. I can't run unless this file exists");
+            return;
+        }
+
+        System.out.println("2. I'm good to go");
     }
 
     public static void testFile(String fileName) throws IOException {
